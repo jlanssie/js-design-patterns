@@ -1,0 +1,34 @@
+{
+  "name": "js-design-patterns",
+  "version": "1.0.0",
+  "description": "Design Patterns for JavaScript",
+  "keywords": [
+    "javascript",
+    "design",
+    "patterns"
+  ],
+  "homepage": "https://github.com/jlanssie/js-design-patterns#readme",
+  "bugs": {
+    "url": "https://github.com/jlanssie/js-design-patterns/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlanssie/js-design-patterns.git"
+  },
+  "license": "GPL-3.0-or-later",
+  "author": "Jeremy Lanssiers",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "jest": "^30.0.5",
+    "@types/jest": "^29.5.11",
+    "prettier": "^3.2.5",
+    "prettier-plugin-packagejson": "^2.4.9",
+    "ts-jest": "^29.1.1",
+    "typescript": "5.5.4"
+  }
+}
