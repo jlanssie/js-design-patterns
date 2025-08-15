@@ -1,16 +1,11 @@
 {
   "preset": "ts-jest",
-  "testMatch": [
-    "**/__tests__/**/*.[jt]s?(x)",
-    "**/?(*.)+(spec|test).[jt]s?(x)"
-  ],
+  "testMatch": ["**/*.test.ts"],
   "testEnvironment": "node",
-  "verbose": true,
-  "cache": true,
   "reporters": ["default"],
   "collectCoverage": true,
-  "collectCoverageFrom": ["src/**/*.{js,ts}", "!**/node_modules/**"],
-  "coveragePathIgnorePatterns": ["<rootDir>/dist/", "\\.d\\.ts$"],
+  "collectCoverageFrom": ["src/**/*.{js,ts}"],
+  "coveragePathIgnorePatterns": ["<rootDir>/dist/", "<rootDir>/node_modules/"],
   "coverageThreshold": {
     "global": {
       "branches": 100,

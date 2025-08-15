@@ -3,8 +3,6 @@
   "singleQuote": true,
   "useTabs": false,
   "tabWidth": 2,
-  "bracketSameLine": false,
-  "arrowParens": "avoid",
   "overrides": [
     {
       "files": ["*.md"],

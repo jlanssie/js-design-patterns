@@ -11,6 +11,7 @@
   "bugs": {
     "url": "https://github.com/jlanssie/js-design-patterns/issues"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jlanssie/js-design-patterns.git"
@@ -20,14 +21,17 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "test": "jest",
-    "format": "prettier --write ."
+    "format": "prettier --write . --log-level silent",
+    "lint": "eslint .",
+    "test": "jest"
   },
   "devDependencies": {
-    "jest": "^30.0.5",
     "@types/jest": "^29.5.11",
-    "prettier": "^3.2.5",
+    "eslint": "^9.33.0",
+    "jest": "^30.0.5",
+    "prettier": "3.6.2",
     "ts-jest": "^29.1.1",
-    "typescript": "5.5.4"
+    "typescript": "5.5.4",
+    "typescript-eslint": "^8.39.1"
   }
 }
