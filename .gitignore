@@ -138,8 +138,15 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
-# IDE
+# IntelliJ IDEA
 .idea/
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
 # OS
 .DS_Store
