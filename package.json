@@ -26,13 +26,13 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.11",
+    "@types/jest": "^30.0.0",
     "eslint": "^9.33.0",
     "jest": "^30.0.5",
-    "prettier": "3.6.2",
-    "ts-jest": "^29.1.1",
-    "typescript": "5.5.4",
-    "typescript-eslint": "^8.39.1"
+    "prettier": "^3.6.2",
+    "ts-jest": "^29.4.1",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.40.0"
   },
   "dependencies": {
     "npx": "^10.2.2"
