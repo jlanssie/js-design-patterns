@@ -1,0 +1,30 @@
+/**
+ * Class representing a factory pattern.
+ */
+export class FactoryObject {
+  private data: any;
+  private readonly factoryData: any;
+
+  constructor(data: any = null, factoryData: any = null) {
+    this.data = data;
+    this.factoryData = factoryData;
+  }
+
+  getData(): any {
+    return this.data;
+  }
+
+  setData(data: any): void {
+    this.data = data;
+  }
+
+  getFactoryData(): any {
+    return this.factoryData;
+  }
+}
+
+export class Factory {
+  create(data?: any): FactoryObject {
+    return new FactoryObject(data, { createdBy: this.constructor.name });
+  }
+}
