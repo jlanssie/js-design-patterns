@@ -24,7 +24,7 @@ export class Product {
 }
 
 export class Factory {
-  static create(data?: any): Product {
+  static createProduct(data?: any): Product {
     return new Product(data, { createdBy: Factory.name });
   }
 }

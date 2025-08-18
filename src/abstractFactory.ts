@@ -30,7 +30,7 @@ export class Factory {
     this.productClass = productClass;
   }
 
-  create(data?: any): any {
+  createProduct(data?: any): any {
     if (this.productClass) {
       try {
         return new this.productClass(data, {

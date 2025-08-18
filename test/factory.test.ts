@@ -2,7 +2,7 @@ import { Factory, Product } from '../src/factory';
 
 describe('Factory', () => {
   test('A factory creates standardized products.', () => {
-    const product = Factory.create('Product One');
+    const product = Factory.createProduct('Product One');
     product.setData('Product One!');
 
     expect(product.getData()).toBe('Product One!');

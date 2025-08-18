@@ -16,7 +16,7 @@ describe('Factory', () => {
   test('An empty factory creates empty products.', () => {
     const factory = new Factory();
 
-    const product = factory.create('Product One');
+    const product = factory.createProduct('Product One');
 
     expect(product).toBeUndefined();
   });
@@ -26,7 +26,7 @@ describe('Factory', () => {
 
     const factory = new Factory('InvalidProduct');
 
-    const product = factory.create('Product One');
+    const product = factory.createProduct('Product One');
 
     expect(product).toBeUndefined();
     expect(console.error).toHaveBeenCalledWith(
@@ -37,7 +37,7 @@ describe('Factory', () => {
   test('A factory creates standardized products.', () => {
     const factory = new Factory(Product);
 
-    const product = factory.create('Product One');
+    const product = factory.createProduct('Product One');
     product.setData('Product One!');
 
     expect(product.getData()).toBe('Product One!');
