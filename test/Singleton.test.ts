@@ -16,23 +16,23 @@ describe('Singleton', () => {
     const instanceTwo = new Singleton('Hello, World!!');
     const instanceThree = new Singleton('Hello, World!!!');
 
-    expect(instanceOne.getImmutableData()).toBe('Hello, World!');
-    expect(instanceTwo.getImmutableData()).toBe('Hello, World!');
-    expect(instanceThree.getImmutableData()).toBe('Hello, World!');
+    expect(instanceOne.immutableData).toBe('Hello, World!');
+    expect(instanceTwo.immutableData).toBe('Hello, World!');
+    expect(instanceThree.immutableData).toBe('Hello, World!');
   });
 
   test('All Singleton Class instance references should return the same data.', () => {
     const instanceOne = new Singleton();
-    instanceOne.setData('Hello, World!');
+    instanceOne.data = 'Hello, World!';
 
     const instanceTwo = new Singleton();
-    instanceTwo.setData('Hello, World!!');
+    instanceTwo.data = 'Hello, World!!';
 
     const instanceThree = new Singleton();
-    instanceThree.setData('Hello, World!!!');
+    instanceThree.data = 'Hello, World!!!';
 
-    expect(instanceOne.getData()).toBe('Hello, World!!!');
-    expect(instanceTwo.getData()).toBe('Hello, World!!!');
-    expect(instanceThree.getData()).toBe('Hello, World!!!');
+    expect(instanceOne.data).toBe('Hello, World!!!');
+    expect(instanceTwo.data).toBe('Hello, World!!!');
+    expect(instanceThree.data).toBe('Hello, World!!!');
   });
 });
