@@ -3,9 +3,7 @@
     "declaration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "lib": [
-      "esnext"
-    ],
+    "lib": ["esnext"],
     "module": "ESNext",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
@@ -19,7 +17,5 @@
     "strict": true,
     "target": "ESNext"
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }
