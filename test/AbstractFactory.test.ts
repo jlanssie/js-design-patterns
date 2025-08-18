@@ -13,10 +13,10 @@ describe('Abstract Factory', () => {
     const productFactory = AbstractFactory.createFactory(Product);
 
     const product = productFactory.createProduct('Product One');
-    product.setData('Product One!');
+    product.data = 'Product One!';
 
-    expect(product.getData()).toBe('Product One!');
-    expect(product.getFactoryData()).toEqual({ createdBy: 'ProductFactory' });
+    expect(product.data).toBe('Product One!');
+    expect(product.factoryData).toEqual({ createdBy: 'ProductFactory' });
   });
 });
 
@@ -47,10 +47,10 @@ describe('Factory', () => {
     const factory = new Factory(Product);
 
     const product = factory.createProduct('Product One');
-    product.setData('Product One!');
+    product.data = 'Product One!';
 
-    expect(product.getData()).toBe('Product One!');
-    expect(product.getFactoryData()).toEqual({ createdBy: 'ProductFactory' });
+    expect(product.data).toBe('Product One!');
+    expect(product.factoryData).toEqual({ createdBy: 'ProductFactory' });
   });
 });
 
@@ -58,15 +58,15 @@ describe('Product', () => {
   test('A product can be created with empty data.', () => {
     const product = new Product();
 
-    expect(product.getData()).toBeNull();
-    expect(product.getFactoryData()).toBeNull();
+    expect(product.data).toBeNull();
+    expect(product.factoryData).toBeNull();
   });
 
   test('A product can be created with data and empty factory data.', () => {
     const product = new Product('Object One');
 
-    expect(product.getData()).toBe('Object One');
-    expect(product.getFactoryData()).toBeNull();
+    expect(product.data).toBe('Object One');
+    expect(product.factoryData).toBeNull();
   });
 
   test('A product can be created with data.', () => {
@@ -74,7 +74,7 @@ describe('Product', () => {
       createdBy: 'custom',
     });
 
-    expect(product.getData()).toBe('Object One');
-    expect(product.getFactoryData()).toEqual({ createdBy: 'custom' });
+    expect(product.data).toBe('Object One');
+    expect(product.factoryData).toEqual({ createdBy: 'custom' });
   });
 });
