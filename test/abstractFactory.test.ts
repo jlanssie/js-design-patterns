@@ -21,7 +21,7 @@ describe('Factory', () => {
     expect(product).toBeUndefined();
   });
 
-  test('An faulty factory creates empty products.', () => {
+  test('A faulty factory creates empty products.', () => {
     jest.spyOn(console, 'error').mockImplementation();
 
     const factory = new Factory('InvalidProduct');
