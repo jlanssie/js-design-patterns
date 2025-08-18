@@ -1,7 +1,7 @@
 /**
  * Class representing a factory pattern.
  */
-export class FactoryObject {
+export class Product {
   private data: any;
   private readonly factoryData: any;
 
@@ -24,7 +24,7 @@ export class FactoryObject {
 }
 
 export class Factory {
-  create(data?: any): FactoryObject {
-    return new FactoryObject(data, { createdBy: this.constructor.name });
+  static create(data?: any): Product {
+    return new Product(data, { createdBy: Factory.name });
   }
 }

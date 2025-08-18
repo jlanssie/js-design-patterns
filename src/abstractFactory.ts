@@ -1,0 +1,50 @@
+/**
+ * Class representing an abstract factory pattern.
+ */
+export class Product {
+  private data: any;
+  private readonly factoryData: any;
+
+  constructor(data: any = null, factoryData: any = null) {
+    this.data = data;
+    this.factoryData = factoryData;
+  }
+
+  getData(): any {
+    return this.data;
+  }
+
+  setData(data: any): void {
+    this.data = data;
+  }
+
+  getFactoryData(): any {
+    return this.factoryData;
+  }
+}
+
+export class Factory {
+  private readonly productClass: any;
+
+  constructor(productClass: any = null) {
+    this.productClass = productClass;
+  }
+
+  create(data?: any): any {
+    if (this.productClass) {
+      try {
+        return new this.productClass(data, {
+          createdBy: this.productClass.name + 'Factory',
+        });
+      } catch (error) {
+        console.error(`Error. Faulty product class for factory.`);
+      }
+    }
+  }
+}
+
+export class AbstractFactory {
+  static createFactory(productClass?: any): any {
+    return new Factory(productClass);
+  }
+}

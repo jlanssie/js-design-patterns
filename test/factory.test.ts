@@ -1,38 +1,36 @@
-import { Factory, FactoryObject } from '../src/factory';
+import { Factory, Product } from '../src/factory';
 
 describe('Factory', () => {
-  test('A Factory creates standardized objects.', () => {
-    const factory = new Factory();
+  test('A factory creates standardized products.', () => {
+    const product = Factory.create('Product One');
+    product.setData('Product One!');
 
-    const factoryObject = factory.create('Factory Object One');
-    factoryObject.setData('Factory Object One!');
-
-    expect(factoryObject.getData()).toBe('Factory Object One!');
-    expect(factoryObject.getFactoryData()).toEqual({ createdBy: 'Factory' });
+    expect(product.getData()).toBe('Product One!');
+    expect(product.getFactoryData()).toEqual({ createdBy: 'Factory' });
   });
 });
 
-describe('Factory object', () => {
-  test('A Factory object can be created with empty data.', () => {
-    const factoryObject = new FactoryObject();
+describe('Product', () => {
+  test('A product can be created with empty data.', () => {
+    const product = new Product();
 
-    expect(factoryObject.getData()).toBeNull();
-    expect(factoryObject.getFactoryData()).toBeNull();
+    expect(product.getData()).toBeNull();
+    expect(product.getFactoryData()).toBeNull();
   });
 
-  test('A Factory object can be created with data and empty factory data.', () => {
-    const factoryObject = new FactoryObject('Object One');
+  test('A product can be created with data and empty factory data.', () => {
+    const product = new Product('Object One');
 
-    expect(factoryObject.getData()).toBe('Object One');
-    expect(factoryObject.getFactoryData()).toBeNull();
+    expect(product.getData()).toBe('Object One');
+    expect(product.getFactoryData()).toBeNull();
   });
 
-  test('A Factory object can be created with data.', () => {
-    const factoryObject = new FactoryObject('Object One', {
+  test('A product can be created with data.', () => {
+    const product = new Product('Object One', {
       createdBy: 'custom',
     });
 
-    expect(factoryObject.getData()).toBe('Object One');
-    expect(factoryObject.getFactoryData()).toEqual({ createdBy: 'custom' });
+    expect(product.getData()).toBe('Object One');
+    expect(product.getFactoryData()).toEqual({ createdBy: 'custom' });
   });
 });
