@@ -1,5 +1,9 @@
 import { AbstractFactory, Factory, Product } from '../src/abstractFactory';
 
+afterEach(() => {
+  jest.restoreAllMocks();
+});
+
 describe('Abstract Factory', () => {
   test('An Abstract Factory creates standardized factories.', () => {
     const productFactory = AbstractFactory.createFactory(Product);
@@ -22,6 +26,7 @@ describe('Factory', () => {
   });
 
   test('A faulty factory creates empty products.', () => {
+    // @ts-ignore
     jest.spyOn(console, 'error').mockImplementation();
 
     const factory = new Factory('InvalidProduct');
