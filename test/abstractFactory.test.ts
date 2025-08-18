@@ -4,7 +4,7 @@ describe('Abstract Factory', () => {
   test('An Abstract Factory creates standardized factories.', () => {
     const productFactory = AbstractFactory.createFactory(Product);
 
-    const product = productFactory.create('Product One');
+    const product = productFactory.createProduct('Product One');
     product.setData('Product One!');
 
     expect(product.getData()).toBe('Product One!');
