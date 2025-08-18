@@ -11,13 +11,21 @@ describe('Adapter', () => {
     expect(target.targetData).toBe('source data');
   });
 
-  test('An adapter adapts an invalid Source object to an empty Target object', () => {
+  test('An adapter adapts an invalid Source object to a Target object with empty values', () => {
     const source = {
       name: 'Test Object',
     };
 
     const target = new Target();
     Adapter.adapt(source, target);
+
+    expect(target.targetData).toBeUndefined();
+  });
+
+  test('An adapter adapts an empty Source object to a Target object with empty values', () => {
+    const target = new Target();
+
+    Adapter.adapt(null, null);
 
     expect(target.targetData).toBeUndefined();
   });

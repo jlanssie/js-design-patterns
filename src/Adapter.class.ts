@@ -22,7 +22,7 @@ export class Adapter {
         return target;
       }
     } else {
-      return source;
+      return undefined;
     }
   }
 }
