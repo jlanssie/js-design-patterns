@@ -1,4 +1,8 @@
-import { AbstractFactory, Factory, Product } from '../src/abstractFactory';
+import {
+  AbstractFactory,
+  Factory,
+  Product,
+} from '../src/AbstractFactory.class';
 
 afterEach(() => {
   jest.restoreAllMocks();

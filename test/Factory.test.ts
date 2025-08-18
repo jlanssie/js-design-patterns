@@ -1,4 +1,4 @@
-import { Factory, Product } from '../src/factory';
+import { Factory, Product } from '../src/Factory.class';
 
 describe('Factory', () => {
   test('A factory creates standardized products.', () => {
