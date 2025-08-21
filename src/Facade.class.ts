@@ -2,6 +2,8 @@
  * Class representing a Facade pattern.
  */
 
+//15,30-42
+
 export class SystemA {
   data: any;
 

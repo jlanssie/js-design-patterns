@@ -1,4 +1,4 @@
-import { Facade } from '../src/Facade.class';
+import { Facade, SystemA, SystemB } from '../src/Facade.class';
 
 describe('Facade', () => {
   test("A facade provides a single entry point for other systems' methods", () => {
@@ -17,5 +17,29 @@ describe('Facade', () => {
       systemAKey: 'SystemA key-value.',
       systemBKey: 'SystemB key-value.',
     });
+  });
+
+  test('A facade can be initialized without data', () => {
+    const facade = new Facade();
+    expect(facade.data).toBeNull();
+  });
+
+  test('Sub-systems methods perform actions with provided data', () => {
+    const systemA = new SystemA();
+    const systemB = new SystemB();
+
+    expect(systemA.method({ key: 'value' })).toEqual({
+      key: 'value',
+      systemA: 'SystemA method-value.',
+    });
+
+    expect(systemB.method({ key: 'value' })).toEqual({
+      key: 'value',
+      systemB: 'SystemB method-value.',
+    });
+
+    expect(systemA.method(null)).toBeUndefined();
+
+    expect(systemB.method(null)).toBeUndefined();
   });
 });
