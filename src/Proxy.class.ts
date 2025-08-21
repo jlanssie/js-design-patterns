@@ -16,7 +16,7 @@ export class Proxy {
       try {
         return JSON.stringify(clazz.data);
       } catch {
-        throw new Error('clazz argument Data is not serializable.');
+        throw new Error('clazz argument data cannot be stringified.');
       }
     } else {
       throw new Error('clazz argument has no data.');
