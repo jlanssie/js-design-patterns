@@ -1,4 +1,4 @@
-import { Decorator } from '../src/Decorator.class';
+import { Decorator } from '../../src/structural-patterns/Decorator.class';
 
 describe('Decorator', () => {
   test('A decorator should be able to add a value to an object', () => {

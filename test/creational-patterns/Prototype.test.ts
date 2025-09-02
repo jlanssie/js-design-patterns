@@ -1,4 +1,4 @@
-import { ExtendedPrototype } from '../src/Prototype.class';
+import { ExtendedPrototype } from '../../src/creational-patterns/Prototype.class';
 
 describe('Prototype', () => {
   test("An object with a prototype inherits the prototype's values & methods.", () => {

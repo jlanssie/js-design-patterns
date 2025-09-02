@@ -1,4 +1,4 @@
-import { Facade, SystemA, SystemB } from '../src/Facade.class';
+import { Facade, SystemA, SystemB } from '../../src/structural-patterns/Facade.class';
 
 describe('Facade', () => {
   test("A facade provides a single entry point for other systems' methods", () => {

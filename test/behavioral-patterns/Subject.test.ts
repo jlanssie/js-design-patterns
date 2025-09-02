@@ -1,4 +1,4 @@
-import { Subject } from '../src/Subject.class';
+import { Subject } from '../../src/behavioral-patterns/Subject.class';
 
 describe('Subject', () => {
   test('Observers should be able to subscribe to a subject.', () => {

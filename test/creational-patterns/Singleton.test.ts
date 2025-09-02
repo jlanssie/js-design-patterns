@@ -1,4 +1,4 @@
-import { Singleton } from '../src/Singleton.class';
+import { Singleton } from '../../src/creational-patterns/Singleton.class';
 
 describe('Singleton', () => {
   test('A Singleton Class should create only one instance.', () => {

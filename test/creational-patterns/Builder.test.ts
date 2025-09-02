@@ -1,4 +1,4 @@
-import { Builder } from '../src/Builder.class';
+import { Builder } from '../../src/creational-patterns/Builder.class';
 
 afterEach(() => {
   jest.restoreAllMocks();

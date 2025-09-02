@@ -1,4 +1,4 @@
-import { Factory, Product } from '../src/Factory.class';
+import { Factory, Product } from '../../src/creational-patterns/Factory.class';
 
 describe('Factory', () => {
   test('A factory creates standardized products.', () => {

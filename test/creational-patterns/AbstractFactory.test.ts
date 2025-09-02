@@ -2,7 +2,7 @@ import {
   AbstractFactory,
   Factory,
   Product,
-} from '../src/AbstractFactory.class';
+} from '../../src/creational-patterns/AbstractFactory.class';
 
 afterEach(() => {
   jest.restoreAllMocks();

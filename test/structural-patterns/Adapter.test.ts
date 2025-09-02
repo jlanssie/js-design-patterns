@@ -1,4 +1,4 @@
-import { Source, Target, Adapter } from '../src/Adapter.class';
+import { Source, Target, Adapter } from '../../src/structural-patterns/Adapter.class';
 
 describe('Adapter', () => {
   test('An adapter adapts a valid Source object to a valid Target object', () => {
