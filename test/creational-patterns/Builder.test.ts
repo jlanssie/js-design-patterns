@@ -1,4 +1,5 @@
 import { Builder } from '../../src/creational-patterns/Builder.class';
+import { customData } from '../../src/customData';
 
 afterEach(() => {
   jest.restoreAllMocks();
@@ -7,35 +8,23 @@ afterEach(() => {
 describe('Builder', () => {
   describe('addKeyMethod', () => {
     test('A Builder can add a key-value pair to the object', () => {
-      // @ts-ignore
-      jest.spyOn(console, 'info').mockImplementation();
-
-      const object: any = {
-        name: 'Test Object',
-      };
+      const object: any = {};
 
       Builder.addKeyValue(object);
 
-      expect(object.data).toBe('Key-Value added to the object.');
+      expect(object.data).toBe(customData);
     });
   });
 
   describe('addMethod', () => {
     test('A Builder can add a key-method pair to the object', () => {
-      // @ts-ignore
-      jest.spyOn(console, 'info').mockImplementation();
-
-      const object: any = {
-        name: 'Test Object',
-      };
+      const object: any = {};
 
       Builder.addKeyMethod(object);
 
       object.method();
 
-      expect(console.info).toHaveBeenCalledWith(
-        expect.stringContaining('Key-Method added to the object.'),
-      );
+      expect(object.method()).toEqual(customData);
     });
   });
 });
