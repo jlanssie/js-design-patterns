@@ -1,17 +1,10 @@
+import { MyClass } from '../MyClass.class';
+
 /**
  * Class representing a Proxy pattern.
  */
-
-export class Clazz {
-  data: object;
-
-  constructor(data: any = {}) {
-    this.data = data;
-  }
-}
-
 export class Proxy {
-  static getData(clazz: Clazz): string {
+  static getData(clazz: MyClass): string {
     if (clazz.data) {
       try {
         return JSON.stringify(clazz.data);
@@ -23,7 +16,7 @@ export class Proxy {
     }
   }
 
-  static setData(clazz: Clazz, data: any): void {
+  static setData(clazz: MyClass, data: any): void {
     if (data && typeof data === 'object') {
       clazz.data = data;
     } else {

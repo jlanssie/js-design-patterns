@@ -1,10 +1,10 @@
-import { myClass } from '../MyClass.class';
+import { MyClass } from '../MyClass.class';
 import { myObject } from '../myData';
 
 /**
  * Class representing a Prototype pattern.
  */
-export class ExtendedPrototype extends myClass {
+export class ExtendedPrototype extends MyClass {
   readonly extendedData: any;
 
   constructor() {

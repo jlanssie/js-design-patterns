@@ -1,4 +1,4 @@
-import { myClass } from '../../src/MyClass.class';
+import { MyClass } from '../../src/MyClass.class';
 import { Factory } from '../../src/creational-patterns/Factory.class';
 import { myObject } from '../../src/myData';
 
@@ -24,7 +24,7 @@ describe('Factory', () => {
   });
 
   test('A factory creates standardized products.', () => {
-    const factory = new Factory(myClass);
+    const factory = new Factory(MyClass);
     const product = factory.create(myObject);
 
     expect(product.data).toBe(myObject);

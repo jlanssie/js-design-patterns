@@ -1,6 +1,6 @@
 import { myObject } from './myData';
 
-export class myClass {
+export class MyClass {
   data: any;
 
   constructor(data: any = myObject) {
