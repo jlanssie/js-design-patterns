@@ -1,7 +1,7 @@
 import { myObject } from '../myData';
 
 /**
- * Class representing a decorator pattern.
+ * Class representing a Decorator pattern.
  */
 export class Decorator {
   object: any;
