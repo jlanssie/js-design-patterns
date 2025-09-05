@@ -1,28 +1,12 @@
-export class Source {
-  sourceData?: string;
-
-  constructor(sourceData: string | undefined = undefined) {
-    this.sourceData = sourceData;
-  }
-}
-
-export class Target {
-  targetData?: string;
-
-  constructor(targetData: string | undefined = undefined) {
-    this.targetData = targetData;
-  }
-}
+import { ThirdPartyClass } from '../ThirdPartyClass.class';
+import { MyClass } from '../MyClass.class';
 
 export class Adapter {
-  static adapt(source: any, target: any): any {
+  static adapt(source: any, target: any): void {
     if (source && target) {
-      if (source instanceof Source && target instanceof Target) {
-        target.targetData = source.sourceData;
-        return target;
+      if (source instanceof ThirdPartyClass && target instanceof MyClass) {
+        target.data = source.data;
       }
-    } else {
-      return undefined;
     }
   }
 }

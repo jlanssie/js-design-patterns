@@ -1,36 +1,35 @@
-import {
-  Source,
-  Target,
-  Adapter,
-} from '../../src/structural-patterns/Adapter.class';
+import { Adapter } from '../../src/structural-patterns/Adapter.class';
+
+import { MyClass } from '../../src/MyClass.class';
+import { ThirdPartyClass } from '../../src/ThirdPartyClass.class';
+import { thirdPartyObject } from '../../src/thirdPartyData';
+import { myObject } from '../../src/myData';
 
 describe('Adapter', () => {
   test('An adapter adapts a valid Source object to a valid Target object', () => {
-    const source = new Source();
-    source.sourceData = 'source data';
+    const source = new ThirdPartyClass();
+    source.data = thirdPartyObject;
+    const target = new MyClass();
 
-    const target = new Target();
     Adapter.adapt(source, target);
 
-    expect(target.targetData).toBe('source data');
+    expect(target.data).toBe(thirdPartyObject);
   });
 
-  test('An adapter adapts an invalid Source object to a Target object with empty values', () => {
-    const source = {
-      name: 'Test Object',
-    };
+  test('An adapter adapts an invalid Source object to a new Target object.', () => {
+    const source = thirdPartyObject;
+    const target = new MyClass();
 
-    const target = new Target();
     Adapter.adapt(source, target);
 
-    expect(target.targetData).toBeUndefined();
+    expect(target.data).toBe(myObject);
   });
 
-  test('An adapter adapts an empty Source object to a Target object with empty values', () => {
-    const target = new Target();
+  test('An adapter adapts an empty Source object to a new Target object.', () => {
+    const target = new MyClass();
 
     Adapter.adapt(null, null);
 
-    expect(target.targetData).toBeUndefined();
+    expect(target.data).toBe(myObject);
   });
 });
