@@ -1,14 +1,14 @@
-import { CustomObject } from '../CustomObject.class';
-import { customObject } from '../customData';
+import { myClass } from '../MyClass.class';
+import { myObject } from '../myData';
 
 /**
  * Class representing a Prototype pattern.
  */
-export class ExtendedPrototype extends CustomObject {
+export class ExtendedPrototype extends myClass {
   readonly extendedData: any;
 
   constructor() {
     super();
-    this.extendedData = customObject;
+    this.extendedData = myObject;
   }
 }

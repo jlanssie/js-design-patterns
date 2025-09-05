@@ -1,5 +1,5 @@
 import { Subject } from '../../src/behavioral-patterns/Subject.class';
-import { customObject, customString } from '../../src/customData';
+import { myObject, myString } from '../../src/myData';
 
 describe('Subject', () => {
   test('Observers should be able to subscribe to a subject.', () => {
@@ -54,15 +54,15 @@ describe('Subject', () => {
 
     subject.subscribe(observer3);
 
-    subject.notify(customObject);
+    subject.notify(myObject);
 
     expect(subject.observers.length).toBe(3);
     expect(observer1).toHaveBeenCalledTimes(1);
-    expect(observer1).toHaveBeenCalledWith(customObject);
+    expect(observer1).toHaveBeenCalledWith(myObject);
     expect(observer2).toHaveBeenCalledTimes(1);
-    expect(observer2).toHaveBeenCalledWith(customObject);
+    expect(observer2).toHaveBeenCalledWith(myObject);
 
-    expect(observer3(customString)).toBe('data: ' + customString);
-    expect(subject.observers[2](customString)).toBe('data: ' + customString);
+    expect(observer3(myString)).toBe('data: ' + myString);
+    expect(subject.observers[2](myString)).toBe('data: ' + myString);
   });
 });

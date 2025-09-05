@@ -1,12 +1,12 @@
 import { AbstractFactory } from '../../src/creational-patterns/AbstractFactory.class';
-import { CustomObject } from '../../src/CustomObject.class';
-import { customObject } from '../../src/customData';
+import { myClass } from '../../src/MyClass.class';
+import { myObject } from '../../src/myData';
 
 describe('Abstract Factory', () => {
   test('An Abstract Factory creates standardized factories.', () => {
-    const factory = AbstractFactory.createFactory(CustomObject);
-    const product = factory.create(customObject);
+    const factory = AbstractFactory.createFactory(myClass);
+    const product = factory.create(myObject);
 
-    expect(product.data).toBe(customObject);
+    expect(product.data).toBe(myObject);
   });
 });

@@ -1,4 +1,4 @@
-import { customObject } from '../customData';
+import { myObject } from '../myData';
 
 /**
  * Class representing a decorator pattern.
@@ -13,6 +13,6 @@ export class Decorator {
   }
 
   method = (): any => {
-    return customObject;
+    return myObject;
   };
 }

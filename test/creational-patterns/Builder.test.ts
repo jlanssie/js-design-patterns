@@ -1,5 +1,5 @@
 import { Builder } from '../../src/creational-patterns/Builder.class';
-import { customObject } from '../../src/customData';
+import { myObject } from '../../src/myData';
 
 afterEach(() => {
   jest.restoreAllMocks();
@@ -12,7 +12,7 @@ describe('Builder', () => {
 
       Builder.addKeyValue(object);
 
-      expect(object.data).toBe(customObject);
+      expect(object.data).toBe(myObject);
     });
   });
 
@@ -24,7 +24,7 @@ describe('Builder', () => {
 
       object.method();
 
-      expect(object.method()).toEqual(customObject);
+      expect(object.method()).toEqual(myObject);
     });
   });
 });
