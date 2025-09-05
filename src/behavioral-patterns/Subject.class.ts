@@ -1,5 +1,5 @@
 /**
- * Class representing an Observer pattern.
+ * Class representing a Subject for an Observer pattern.
  */
 export class Subject {
   observers: any[];
