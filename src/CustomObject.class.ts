@@ -1,13 +1,13 @@
-import { customData } from './customData';
+import { customObject } from './customData';
 
 export class CustomObject {
   data: any;
 
-  constructor(data: any = null) {
+  constructor(data: any = customObject) {
     this.data = data;
   }
 
   method(): any {
-    return customData;
+    return customObject;
   }
 }

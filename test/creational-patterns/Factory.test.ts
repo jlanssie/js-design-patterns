@@ -1,11 +1,11 @@
 import { CustomObject } from '../../src/CustomObject.class';
 import { Factory } from '../../src/creational-patterns/Factory.class';
-import { customData } from '../../src/customData';
+import { customObject } from '../../src/customData';
 
 describe('Factory', () => {
   test('An empty factory creates empty products.', () => {
     const factory = new Factory();
-    const product = factory.create(customData);
+    const product = factory.create(customObject);
 
     expect(product).toBeUndefined();
   });
@@ -15,7 +15,7 @@ describe('Factory', () => {
     jest.spyOn(console, 'error').mockImplementation();
 
     const factory = new Factory('InvalidProduct');
-    const product = factory.create(customData);
+    const product = factory.create(customObject);
 
     expect(product).toBeUndefined();
     expect(console.error).toHaveBeenCalledWith(
@@ -25,8 +25,8 @@ describe('Factory', () => {
 
   test('A factory creates standardized objects.', () => {
     const factory = new Factory(CustomObject);
-    const product = factory.create(customData);
+    const product = factory.create(customObject);
 
-    expect(product.data).toBe(customData);
+    expect(product.data).toBe(customObject);
   });
 });

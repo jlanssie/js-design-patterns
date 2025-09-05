@@ -1,23 +1,14 @@
+import { CustomObject } from '../CustomObject.class';
+import { customObject } from '../customData';
+
 /**
  * Class representing a Prototype pattern.
  */
-export class Prototype {
-  readonly data: string;
-
-  constructor() {
-    this.data = 'I am a prototype value!';
-  }
-
-  method(): any {
-    return `I am a prototype method!`;
-  }
-}
-
-export class ExtendedPrototype extends Prototype {
-  readonly extendedData: string;
+export class ExtendedPrototype extends CustomObject {
+  readonly extendedData: any;
 
   constructor() {
     super();
-    this.extendedData = 'I am an object value!';
+    this.extendedData = customObject;
   }
 }

@@ -1,4 +1,5 @@
 import { ExtendedPrototype } from '../../src/creational-patterns/Prototype.class';
+import { customObject } from '../../src/customData';
 
 describe('Prototype', () => {
   test("An object with a prototype inherits the prototype's values & methods.", () => {
@@ -33,7 +34,7 @@ describe('Prototype', () => {
   test("An object whose class extends a prototype class inherits the prototype class' values & methods.", () => {
     const object: ExtendedPrototype = new ExtendedPrototype();
 
-    expect(object.data).toBe('I am a prototype value!');
-    expect(object.method()).toBe('I am a prototype method!');
+    expect(object.data).toBe(customObject);
+    expect(object.method()).toBe(customObject);
   });
 });

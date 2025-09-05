@@ -1,5 +1,5 @@
 import { Decorator } from '../../src/structural-patterns/Decorator.class';
-import { customData } from '../../src/customData';
+import { customObject } from '../../src/customData';
 
 describe('Decorator', () => {
   test('A decorator should be able to add a value to an object', () => {
@@ -15,6 +15,6 @@ describe('Decorator', () => {
     const decorator = new Decorator(object);
 
     expect(decorator.object).toBe(object);
-    expect(decorator.method()).toEqual(customData);
+    expect(decorator.method()).toEqual(customObject);
   });
 });
