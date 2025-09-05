@@ -2,13 +2,6 @@ import { CustomObject } from '../../src/CustomObject.class';
 import { Factory } from '../../src/creational-patterns/Factory.class';
 
 describe('Factory', () => {
-  test('A factory creates standardized objects.', () => {
-    const factory = new Factory(CustomObject);
-    const product = factory.create('Data');
-
-    expect(product.data).toBe('Data');
-  });
-
   test('An empty factory creates empty products.', () => {
     const factory = new Factory();
     const product = factory.create('Data');
@@ -27,5 +20,12 @@ describe('Factory', () => {
     expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining('Error. Faulty product class for factory.'),
     );
+  });
+
+  test('A factory creates standardized objects.', () => {
+    const factory = new Factory(CustomObject);
+    const product = factory.create('Data');
+
+    expect(product.data).toBe('Data');
   });
 });
