@@ -1,3 +1,5 @@
+import { customData } from '../customData';
+
 /**
  * Class representing a decorator pattern.
  */
@@ -10,7 +12,7 @@ export class Decorator {
     this.data = { decoratedBy: Decorator.name };
   }
 
-  method = (): string => {
-    return 'This is a decorative method.';
+  method = (): any => {
+    return customData;
   };
 }
