@@ -1,4 +1,5 @@
 import { MySystem } from '../MySystem.class';
+import { ThirdPartySystem } from '../ThirdPartySystem.class';
 
 /**
  * Class representing a Facade pattern.
@@ -10,7 +11,7 @@ export class Facade {
 
   constructor(data: any = null) {
     this.data = data;
-    this.systems = [new MySystem()];
+    this.systems = [new MySystem(), new ThirdPartySystem()];
   }
 
   method(): void {

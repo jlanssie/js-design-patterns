@@ -1,6 +1,7 @@
 import { Facade } from '../../src/structural-patterns/Facade.class';
 
 import { MySystem } from '../../src/MySystem.class';
+import { ThirdPartySystem } from '../../src/ThirdPartySystem.class';
 
 describe('Facade', () => {
   test("A facade provides a single entry point for other systems' methods", () => {
@@ -16,6 +17,7 @@ describe('Facade', () => {
 
     expect(aggregatedData).toEqual({
       systemKey: 'System key-value.',
+      thirdPartySystemKey: 'Third-Party System key-value.',
     });
   });
 
@@ -26,7 +28,7 @@ describe('Facade', () => {
 
   test('Sub-systems methods perform actions with provided data', () => {
     const systemA = new MySystem();
-    const systemB = new MySystem();
+    const systemB = new ThirdPartySystem();
 
     expect(systemA.method({ key: 'value' })).toEqual({
       key: 'value',
@@ -35,7 +37,7 @@ describe('Facade', () => {
 
     expect(systemB.method({ key: 'value' })).toEqual({
       key: 'value',
-      system: 'System method-value.',
+      thirdPartySystemKey: 'Third-Party System method-value.',
     });
 
     expect(systemA.method(null)).toBeUndefined();
