@@ -8,7 +8,7 @@ export class Factory {
     this.productClass = productClass;
   }
 
-  createProduct(data?: any): any {
+  create(data?: any): any {
     if (this.productClass) {
       try {
         return new this.productClass(data, {
