@@ -1,16 +1,13 @@
-import {
-  Facade,
-  SystemA,
-  SystemB,
-} from '../../src/structural-patterns/Facade.class';
+import { Facade } from '../../src/structural-patterns/Facade.class';
+
+import { MySystem } from '../../src/MySystem.class';
 
 describe('Facade', () => {
   test("A facade provides a single entry point for other systems' methods", () => {
     const facade = new Facade({});
     facade.method();
 
-    expect(facade.data.systemA).toBe('SystemA method-value.');
-    expect(facade.data.systemB).toBe('SystemB method-value.');
+    expect(facade.data.system).toBe('System method-value.');
   });
 
   test("A facade provides a single entry point for other systems' internal data", () => {
@@ -18,8 +15,7 @@ describe('Facade', () => {
     const aggregatedData = facade.aggregatedData();
 
     expect(aggregatedData).toEqual({
-      systemAKey: 'SystemA key-value.',
-      systemBKey: 'SystemB key-value.',
+      systemKey: 'System key-value.',
     });
   });
 
@@ -29,17 +25,17 @@ describe('Facade', () => {
   });
 
   test('Sub-systems methods perform actions with provided data', () => {
-    const systemA = new SystemA();
-    const systemB = new SystemB();
+    const systemA = new MySystem();
+    const systemB = new MySystem();
 
     expect(systemA.method({ key: 'value' })).toEqual({
       key: 'value',
-      systemA: 'SystemA method-value.',
+      system: 'System method-value.',
     });
 
     expect(systemB.method({ key: 'value' })).toEqual({
       key: 'value',
-      systemB: 'SystemB method-value.',
+      system: 'System method-value.',
     });
 
     expect(systemA.method(null)).toBeUndefined();

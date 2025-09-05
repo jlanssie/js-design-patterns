@@ -1,39 +1,8 @@
+import { MySystem } from '../MySystem.class';
+
 /**
  * Class representing a Facade pattern.
  */
-
-//15,30-42
-
-export class SystemA {
-  data: any;
-
-  constructor(data: any = { systemAKey: 'SystemA key-value.' }) {
-    this.data = data;
-  }
-
-  method(data: any) {
-    if (data && typeof data === 'object') {
-      data.systemA = 'SystemA method-value.';
-      return data;
-    }
-  }
-}
-
-export class SystemB {
-  data: any;
-
-  constructor(data: any = { systemBKey: 'SystemB key-value.' }) {
-    this.data = data;
-  }
-
-  method(data: any) {
-    if (data && typeof data === 'object') {
-      data.systemB = 'SystemB method-value.';
-      return data;
-    }
-  }
-}
-
 export class Facade {
   data: any;
   aggregatedData = () => this.aggregateData();
@@ -41,7 +10,7 @@ export class Facade {
 
   constructor(data: any = null) {
     this.data = data;
-    this.systems = [new SystemA(), new SystemB()];
+    this.systems = [new MySystem()];
   }
 
   method(): void {
