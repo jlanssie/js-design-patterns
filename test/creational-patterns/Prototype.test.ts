@@ -3,32 +3,29 @@ import { customObject } from '../../src/customData';
 
 describe('Prototype', () => {
   test("An object with a prototype inherits the prototype's values & methods.", () => {
-    let object: any = {
-      name: 'Test Object',
-    };
+    let object: any = {};
 
     const prototypeObject = {
-      data: 'I am a prototype value!',
-      method: () => 'I am a prototype method!',
+      data: customObject,
+      method: () => customObject,
     };
 
     Object.setPrototypeOf(object, prototypeObject);
 
-    expect(object.data).toBe('I am a prototype value!');
-    expect(object.method()).toBe('I am a prototype method!');
-    expect(object.name).toBe('Test Object');
+    expect(object.data).toBe(customObject);
+    expect(object.method()).toBe(customObject);
   });
 
   test("An object with a prototype inherits the prototype's values & methods.", () => {
     const prototypeObject = {
-      data: 'I am a prototype value!',
-      method: () => 'I am a prototype method!',
+      data: customObject,
+      method: () => customObject,
     };
 
     const object = Object.create(prototypeObject);
 
-    expect(object.data).toBe('I am a prototype value!');
-    expect(object.method()).toBe('I am a prototype method!');
+    expect(object.data).toBe(customObject);
+    expect(object.method()).toBe(customObject);
   });
 
   test("An object whose class extends a prototype class inherits the prototype class' values & methods.", () => {

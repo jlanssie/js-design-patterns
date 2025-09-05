@@ -23,7 +23,7 @@ describe('Factory', () => {
     );
   });
 
-  test('A factory creates standardized objects.', () => {
+  test('A factory creates standardized products.', () => {
     const factory = new Factory(CustomObject);
     const product = factory.create(customObject);
 
