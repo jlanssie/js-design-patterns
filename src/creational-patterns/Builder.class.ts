@@ -1,5 +1,5 @@
 /**
- * Class representing a builder pattern.
+ * Class representing a Builder pattern.
  */
 export class Builder {
   static readonly addKeyValue = (object: any): void => {

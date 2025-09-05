@@ -1,36 +1,45 @@
-import { Factory, Product } from '../../src/creational-patterns/Factory.class';
+import { Product } from '../../src/Product.class';
+import { Factory } from '../../src/creational-patterns/Factory.class';
 
 describe('Factory', () => {
   test('A factory creates standardized products.', () => {
-    const product = Factory.createProduct('Product One');
+    const factory = new Factory(Product);
+    const product = factory.createProduct('Product One');
     product.data = 'Product One!';
 
     expect(product.data).toBe('Product One!');
-    expect(product.factoryData).toEqual({ createdBy: 'Factory' });
-  });
-});
-
-describe('Product', () => {
-  test('A product can be created with empty data.', () => {
-    const product = new Product();
-
-    expect(product.data).toBeNull();
-    expect(product.factoryData).toBeNull();
+    expect(product.factoryData).toEqual({ createdBy: 'ProductFactory' });
   });
 
-  test('A product can be created with data and empty factory data.', () => {
-    const product = new Product('Object One');
+  test('An empty factory creates empty products.', () => {
+    const factory = new Factory();
 
-    expect(product.data).toBe('Object One');
-    expect(product.factoryData).toBeNull();
+    const product = factory.createProduct('Product One');
+
+    expect(product).toBeUndefined();
   });
 
-  test('A product can be created with data.', () => {
-    const product = new Product('Object One', {
-      createdBy: 'custom',
-    });
+  test('A faulty factory creates empty products.', () => {
+    // @ts-ignore
+    jest.spyOn(console, 'error').mockImplementation();
 
-    expect(product.data).toBe('Object One');
-    expect(product.factoryData).toEqual({ createdBy: 'custom' });
+    const factory = new Factory('InvalidProduct');
+
+    const product = factory.createProduct('Product One');
+
+    expect(product).toBeUndefined();
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining('Error. Faulty product class for factory.'),
+    );
+  });
+
+  test('A factory creates standardized products.', () => {
+    const factory = new Factory(Product);
+
+    const product = factory.createProduct('Product One');
+    product.data = 'Product One!';
+
+    expect(product.data).toBe('Product One!');
+    expect(product.factoryData).toEqual({ createdBy: 'ProductFactory' });
   });
 });
