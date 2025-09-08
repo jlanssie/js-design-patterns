@@ -1,6 +1,7 @@
 import { thirdPartyObject } from './thirdPartyData';
+import { ThirdPartyInterface } from './ThirdPartyInterface';
 
-export class ThirdPartyClass {
+export class ThirdPartyClass implements ThirdPartyInterface {
   data: any;
 
   constructor(data: any = thirdPartyObject) {
