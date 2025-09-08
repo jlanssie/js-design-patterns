@@ -1,7 +1,7 @@
 import { Facade } from '../../src/structural-patterns/Facade.class';
 
-import { MySystem } from '../../src/MySystem.class';
-import { ThirdPartySystem } from '../../src/ThirdPartySystem.class';
+import { MySystem } from '../../src/helpers/MySystem.class';
+import { ThirdPartySystem } from '../../src/helpers/ThirdPartySystem.class';
 
 describe('Facade', () => {
   test("A facade provides a single entry point for other systems' methods", () => {

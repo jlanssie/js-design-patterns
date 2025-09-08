@@ -1,6 +1,6 @@
-import { MyClass } from '../../src/MyClass.class';
+import { MyClass } from '../../src/helpers/MyClass.class';
 import { Factory } from '../../src/creational-patterns/Factory.class';
-import { myObject } from '../../src/myData';
+import { myObject } from '../../src/helpers/myData';
 
 describe('Factory', () => {
   test('An empty factory creates empty products.', () => {

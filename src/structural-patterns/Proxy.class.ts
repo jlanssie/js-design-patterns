@@ -1,4 +1,4 @@
-import { MyClass } from '../MyClass.class';
+import { MyClass } from '../helpers/MyClass.class';
 
 /**
  * Class representing a Proxy pattern.

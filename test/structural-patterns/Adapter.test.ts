@@ -1,9 +1,9 @@
 import { Adapter } from '../../src/structural-patterns/Adapter.class';
 
-import { MyClass } from '../../src/MyClass.class';
-import { ThirdPartyClass } from '../../src/ThirdPartyClass.class';
-import { thirdPartyObject } from '../../src/thirdPartyData';
-import { myObject } from '../../src/myData';
+import { MyClass } from '../../src/helpers/MyClass.class';
+import { ThirdPartyClass } from '../../src/helpers/ThirdPartyClass.class';
+import { thirdPartyObject } from '../../src/helpers/thirdPartyData';
+import { myObject } from '../../src/helpers/myData';
 
 describe('Adapter', () => {
   test('An adapter adapts a valid Source object to a valid Target object', () => {

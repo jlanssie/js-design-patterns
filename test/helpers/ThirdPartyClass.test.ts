@@ -1,5 +1,5 @@
-import { ThirdPartyClass } from '../src/ThirdPartyClass.class';
-import { thirdPartyObject } from '../src/thirdPartyData';
+import { ThirdPartyClass } from '../../src/helpers/ThirdPartyClass.class';
+import { thirdPartyObject } from '../../src/helpers/thirdPartyData';
 
 describe('MyClass', () => {
   test('An object can be created with empty data.', () => {

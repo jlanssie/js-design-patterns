@@ -1,5 +1,5 @@
 import { Proxy } from '../../src/structural-patterns/Proxy.class';
-import { MyClass } from '../../src/MyClass.class';
+import { MyClass } from '../../src/helpers/MyClass.class';
 
 describe('Proxy', () => {
   test('Proxy should mediate getting data from Clazz', () => {

@@ -1,5 +1,5 @@
-import { MySystem } from '../MySystem.class';
-import { ThirdPartySystem } from '../ThirdPartySystem.class';
+import { MySystem } from '../helpers/MySystem.class';
+import { ThirdPartySystem } from '../helpers/ThirdPartySystem.class';
 
 /**
  * Class representing a Facade pattern.

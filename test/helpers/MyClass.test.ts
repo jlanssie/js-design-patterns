@@ -1,5 +1,5 @@
-import { MyClass } from '../src/MyClass.class';
-import { myObject } from '../src/myData';
+import { MyClass } from '../../src/helpers/MyClass.class';
+import { myObject } from '../../src/helpers/myData';
 
 describe('MyClass', () => {
   test('An object can be created with empty data.', () => {

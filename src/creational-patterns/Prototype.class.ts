@@ -1,5 +1,5 @@
-import { MyClass } from '../MyClass.class';
-import { myObject } from '../myData';
+import { MyClass } from '../helpers/MyClass.class';
+import { myObject } from '../helpers/myData';
 
 /**
  * Class representing a Prototype pattern.

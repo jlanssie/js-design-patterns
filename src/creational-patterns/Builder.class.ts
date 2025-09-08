@@ -1,4 +1,4 @@
-import { myObject } from '../myData';
+import { myObject } from '../helpers/myData';
 
 /**
  * Class representing a Builder pattern.

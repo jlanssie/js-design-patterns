@@ -1,5 +1,5 @@
-import { ThirdPartyClass } from '../ThirdPartyClass.class';
-import { MyClass } from '../MyClass.class';
+import { ThirdPartyClass } from '../helpers/ThirdPartyClass.class';
+import { MyClass } from '../helpers/MyClass.class';
 
 /**
  * Class representing an Adapter pattern.

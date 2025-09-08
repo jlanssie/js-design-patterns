@@ -1,5 +1,5 @@
 import { Builder } from '../../src/creational-patterns/Builder.class';
-import { myObject } from '../../src/myData';
+import { myObject } from '../../src/helpers/myData';
 
 afterEach(() => {
   jest.restoreAllMocks();
