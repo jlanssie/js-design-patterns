@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   "collectCoverage": true,
   "collectCoverageFrom": ["src/**/*.{js,ts}"],
   "coveragePathIgnorePatterns": ["<rootDir>/dist/", "<rootDir>/node_modules/"],
