@@ -23,6 +23,7 @@
     "build": "tsc",
     "format": "prettier --write . --log-level silent",
     "lint": "eslint .",
+    "prettier": "npm run format",
     "test": "jest"
   },
   "devDependencies": {
