@@ -26,11 +26,13 @@
     "prettier": "npm run format",
     "test": "jest",
     "prettier:verbose": "prettier --write .",
-    "prettier:check": "prettier --check ."
+    "prettier:check": "prettier --check .",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
     "eslint": "^9.33.0",
+    "husky": "^9.1.7",
     "jest": "^30.0.5",
     "prettier": "^3.6.2",
     "ts-jest": "^29.4.1",
