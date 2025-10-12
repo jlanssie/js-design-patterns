@@ -15,7 +15,7 @@ describe('Proxy', () => {
   test('Proxy should mediate getting data from Clazz and throw an error if JSON cannot be stringified', () => {
     const circularData = {};
 
-    // @ts-ignore
+    // @ts-expect-error TS2339: Property self does not exist on type {}
     circularData.self = circularData;
 
     const clazz = new MyClass(circularData);

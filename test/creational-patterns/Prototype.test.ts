@@ -3,7 +3,7 @@ import { myObject } from '../../src/helpers/myData';
 
 describe('Prototype', () => {
   test("An object with a prototype inherits the prototype's values & methods.", () => {
-    let object: any = {};
+    const object: any = {};
 
     const prototypeObject = {
       data: myObject,

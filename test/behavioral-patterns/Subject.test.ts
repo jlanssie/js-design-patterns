@@ -8,10 +8,8 @@ describe('Subject', () => {
     const observer1 = jest.fn();
     const observer2 = jest.fn();
 
-    // @ts-ignore
     subject.subscribe(observer1);
 
-    // @ts-ignore
     subject.subscribe(observer2);
 
     expect(subject.observers.length).toBe(2);
@@ -23,13 +21,10 @@ describe('Subject', () => {
     const observer1 = jest.fn();
     const observer2 = jest.fn();
 
-    // @ts-ignore
     subject.subscribe(observer1);
 
-    // @ts-ignore
     subject.subscribe(observer2);
 
-    // @ts-ignore
     subject.unsubscribe(observer1);
 
     expect(subject.observers.length).toBe(1);
@@ -46,10 +41,8 @@ describe('Subject', () => {
       return `data: ${data}`;
     };
 
-    // @ts-ignore
     subject.subscribe(observer1);
 
-    // @ts-ignore
     subject.subscribe(observer2);
 
     subject.subscribe(observer3);

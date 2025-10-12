@@ -24,7 +24,9 @@
     "format": "prettier --write . --log-level silent",
     "lint": "eslint .",
     "prettier": "npm run format",
-    "test": "jest"
+    "test": "jest",
+    "prettier:verbose": "prettier --write .",
+    "prettier:check": "prettier --check ."
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",

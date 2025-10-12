@@ -11,7 +11,6 @@ describe('Factory', () => {
   });
 
   test('A faulty factory creates empty products.', () => {
-    // @ts-ignore
     jest.spyOn(console, 'error').mockImplementation();
 
     const factory = new Factory('InvalidProduct');

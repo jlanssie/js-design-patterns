@@ -8,10 +8,12 @@ export class Subject {
     this.observers = [];
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
   subscribe(observer: Function) {
     this.observers.push(observer);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
   unsubscribe(observer: Function) {
     this.observers = this.observers.filter((o) => o !== observer);
   }

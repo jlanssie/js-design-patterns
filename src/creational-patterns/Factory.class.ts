@@ -15,7 +15,7 @@ export class Factory {
           createdBy: this.productClass.name + 'Factory',
         });
       } catch (error) {
-        console.error(`Error. Faulty product class for factory.`);
+        console.error(`Error. Faulty product class for factory. ${error}`);
       }
     }
   }
