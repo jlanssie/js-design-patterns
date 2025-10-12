@@ -1,7 +1,7 @@
 import tseslint from 'typescript-eslint';
 import { defineConfig } from 'eslint/config';
 
-export default defineConfig([
+module.exports = defineConfig([
   {
     extends: [...tseslint.configs.recommended],
     files: ['**/*.{ts,mts,cts}'],

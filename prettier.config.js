@@ -1,4 +1,4 @@
-{
+module.exports = {
   "$schema": "https://json.schemastore.org/prettierrc",
   "overrides": [
     {
