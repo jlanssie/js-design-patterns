@@ -7,3 +7,8 @@ export const myArray: [string, number, boolean] = [
   myBoolean,
 ];
 export const myObject: object = { array: myArray };
+
+export const myEnum = Object.freeze({
+  MyClass: 'MyClass',
+  ThirdPartyClass: 'ThirdPartyClass',
+});
