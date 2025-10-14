@@ -1,7 +1,7 @@
 import { Subject } from '../../src/behavioral-patterns/Subject.class';
 import { myObject, myString } from '../../src/helpers/myData';
 
-describe('Subject', () => {
+describe('Observer', () => {
   test('Observers should be able to subscribe to a subject.', () => {
     const subject = new Subject();
 

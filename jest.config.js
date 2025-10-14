@@ -14,5 +14,5 @@ export default {
   preset: 'ts-jest',
   reporters: ['default'],
   testEnvironment: 'node',
-  testMatch: ['**/*.test.ts'],
+  testMatch: ['**/*.spec.ts'],
 };
