@@ -1,7 +1,7 @@
 import { Handler } from './Handler.class';
 
 /**
- * Class representing a Handler for a Chain of Responsibility pattern.
+ * Class representing a concrete handler in a Chain of Responsibility pattern.
  */
 export class HandlerOne extends Handler {
   constructor() {

@@ -1,7 +1,7 @@
 import { Template } from './Template.class';
 
 /**
- * Class representing a Template for a Template pattern.
+ * Class representing a concrete implementation of a template in a Template pattern.
  */
 export class Implementation extends Template {
   publicMethod(data: any): void {

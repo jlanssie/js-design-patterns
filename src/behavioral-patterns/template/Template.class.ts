@@ -1,7 +1,7 @@
 import { myObject } from '../../helpers/myData';
 
 /**
- * Class representing a Template for a Template pattern.
+ * Class representing a template in a Template pattern.
  */
 export abstract class Template {
   data: any;

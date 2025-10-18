@@ -4,7 +4,7 @@ import { myEnum, myObject } from '../helpers/myData';
 import { ThirdPartyClass } from '../helpers/ThirdPartyClass.class';
 
 /**
- * Class representing a Flyweight pattern.
+ * Class representing a Flyweight factory in a Flyweight pattern.
  */
 export class FlyweightFactory {
   cache: Map<string, MyInterface>;

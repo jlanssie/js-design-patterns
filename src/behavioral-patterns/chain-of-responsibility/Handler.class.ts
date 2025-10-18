@@ -1,7 +1,7 @@
 import { IHandler } from './IHandler.interface';
 
 /**
- * Class representing a Handler for a Chain of Responsibility pattern.
+ * Class representing a handler implementation in a Chain of Responsibility pattern.
  */
 export class Handler implements IHandler {
   nextHandler: IHandler | null = null;
