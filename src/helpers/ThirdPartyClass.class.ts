@@ -1,5 +1,5 @@
 import { thirdPartyObject } from './thirdPartyData';
-import { ThirdPartyInterface } from './ThirdPartyInterface';
+import { ThirdPartyInterface } from './IThirdPartyInterface.interface';
 
 export class ThirdPartyClass implements ThirdPartyInterface {
   data: any;

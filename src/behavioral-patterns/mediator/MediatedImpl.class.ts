@@ -1,5 +1,5 @@
 import { Mediated } from './Mediated.class';
-import { Mediator } from './Mediator.interface';
+import { Mediator } from './IMediator.interface';
 
 export class MediatedImpl extends Mediated {
   constructor(mediator: Mediator, data: any) {

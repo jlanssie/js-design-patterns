@@ -1,4 +1,4 @@
-import { MyInterface } from '../helpers/MyInterface';
+import { MyInterface } from '../helpers/IMyInterface.interface';
 import { MyClass } from '../helpers/MyClass.class';
 import { myEnum, myObject } from '../helpers/myData';
 import { ThirdPartyClass } from '../helpers/ThirdPartyClass.class';

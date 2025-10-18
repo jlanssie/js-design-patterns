@@ -1,4 +1,4 @@
-import { myObject } from '../helpers/myData';
+import { myObject } from '../../helpers/myData';
 
 /**
  * Class representing a Template for a Template pattern.

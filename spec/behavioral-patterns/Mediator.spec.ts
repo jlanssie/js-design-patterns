@@ -1,5 +1,5 @@
-import { MediatorImpl } from '../../src/behavioral-patterns/MediatorImpl.class';
-import { MediatedImpl } from '../../src/behavioral-patterns/MediatedImpl.class';
+import { MediatorImpl } from '../../src/behavioral-patterns/mediator/MediatorImpl.class';
+import { MediatedImpl } from '../../src/behavioral-patterns/mediator/MediatedImpl.class';
 import { myObject } from '../../src/helpers/myData';
 import { thirdPartyObject } from '../../src/helpers/thirdPartyData';
 

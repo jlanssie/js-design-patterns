@@ -1,4 +1,4 @@
-import { Implementation } from '../../src/behavioral-patterns/Implementation.class';
+import { Implementation } from '../../src/behavioral-patterns/template/Implementation.class';
 import { myObject } from '../../src/helpers/myData';
 
 describe('Template', () => {

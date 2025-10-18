@@ -1,4 +1,4 @@
-import { ThirdPartyInterface } from '../helpers/ThirdPartyInterface';
+import { ThirdPartyInterface } from '../helpers/IThirdPartyInterface.interface';
 
 /**
  * Class representing a Bridge pattern.

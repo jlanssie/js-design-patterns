@@ -1,4 +1,4 @@
-import { Mediator } from './Mediator.interface';
+import { Mediator } from './IMediator.interface';
 
 export abstract class Mediated {
   mediator: Mediator;

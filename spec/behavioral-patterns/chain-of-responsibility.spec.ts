@@ -1,5 +1,5 @@
-import { HandlerOne } from '../../src/behavioral-patterns/HandlerOne.class';
-import { HandlerTwo } from '../../src/behavioral-patterns/HandlerTwo.class';
+import { HandlerOne } from '../../src/behavioral-patterns/chain-of-responsibility/HandlerOne.class';
+import { HandlerTwo } from '../../src/behavioral-patterns/chain-of-responsibility/HandlerTwo.class';
 
 describe('Chain of Responsibility', () => {
   test('A Chain of Responsibility allows an object to pass a request along a chain of handlers. Each handler in the chain decides either to process the request or to pass it along the chain to the next handler.', () => {

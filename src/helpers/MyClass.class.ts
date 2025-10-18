@@ -1,5 +1,5 @@
 import { myObject } from './myData';
-import { MyInterface } from './MyInterface';
+import { MyInterface } from './IMyInterface.interface';
 
 export class MyClass implements MyInterface {
   data: any;
