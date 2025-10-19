@@ -1,7 +1,7 @@
 import { myObject } from './myData';
-import { MyInterface } from './IMyInterface.interface';
+import { IMyInterface } from './IMyInterface.interface';
 
-export class MyClass implements MyInterface {
+export class MyClass implements IMyInterface {
   data: any;
 
   constructor(data: any = myObject) {

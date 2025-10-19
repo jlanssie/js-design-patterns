@@ -1,11 +1,11 @@
-import { Mediator } from './IMediator.interface';
+import { IMediator } from './IMediator.interface';
 import { Mediated } from './Mediated.class';
 
 /**
  * Class representing a concrete mediator in a Mediator pattern.
  * It mediates interactions between a client and a mediated class.
  */
-export class MediatorImpl implements Mediator {
+export class MediatorImpl implements IMediator {
   mediateds: Mediated[];
 
   constructor() {

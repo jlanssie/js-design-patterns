@@ -1,4 +1,4 @@
-import { ThirdPartyInterface } from '../helpers/IThirdPartyInterface.interface';
+import { IThirdPartyInterface } from '../helpers/IThirdPartyInterface.interface';
 
 /**
  * Class representing a Bridge pattern.
@@ -6,7 +6,7 @@ import { ThirdPartyInterface } from '../helpers/IThirdPartyInterface.interface';
 export class Bridge {
   thirdPartyData: any;
 
-  constructor(thirdPartyData: ThirdPartyInterface) {
+  constructor(thirdPartyData: IThirdPartyInterface) {
     this.thirdPartyData = thirdPartyData.method();
   }
 

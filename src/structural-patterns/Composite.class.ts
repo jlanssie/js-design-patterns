@@ -1,11 +1,11 @@
 import { myObject } from '../helpers/myData';
-import { MyInterface } from '../helpers/IMyInterface.interface';
+import { IMyInterface } from '../helpers/IMyInterface.interface';
 import { MyClass } from '../helpers/MyClass.class';
 
 /**
  * Class representing a Composite pattern.
  */
-export class Composite implements MyInterface {
+export class Composite implements IMyInterface {
   data: any;
   children: MyClass[];
 

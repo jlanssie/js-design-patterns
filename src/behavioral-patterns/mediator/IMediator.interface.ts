@@ -3,7 +3,7 @@ import { Mediated } from './Mediated.class';
 /**
  * Interface for a mediator in a Mediator pattern.
  */
-export interface Mediator {
+export interface IMediator {
   method(sender: Mediated, data: any): any;
 
   addMediated(mediated: Mediated): void;

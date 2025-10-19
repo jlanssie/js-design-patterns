@@ -1,4 +1,4 @@
-export interface ThirdPartyInterface {
+export interface IThirdPartyInterface {
   data: any;
   method(): any;
 }

@@ -1,4 +1,4 @@
-import { MyInterface } from '../helpers/IMyInterface.interface';
+import { IMyInterface } from '../helpers/IMyInterface.interface';
 import { MyClass } from '../helpers/MyClass.class';
 import { myEnum, myObject } from '../helpers/myData';
 import { ThirdPartyClass } from '../helpers/ThirdPartyClass.class';
@@ -7,7 +7,7 @@ import { ThirdPartyClass } from '../helpers/ThirdPartyClass.class';
  * Class representing a Flyweight factory in a Flyweight pattern.
  */
 export class FlyweightFactory {
-  cache: Map<string, MyInterface>;
+  cache: Map<string, IMyInterface>;
 
   constructor() {
     this.cache = new Map();
@@ -17,7 +17,7 @@ export class FlyweightFactory {
     if (this.cache.has(type)) {
       return this.cache.get(type);
     } else {
-      let flyweight: MyInterface;
+      let flyweight: IMyInterface;
 
       switch (type) {
         case myEnum.MyClass:
