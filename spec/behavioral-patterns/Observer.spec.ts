@@ -1,4 +1,4 @@
-import { Subject } from '../../src/behavioral-patterns/Subject.class';
+import { Subject } from '../../src/behavioral-patterns/observer/Subject.class';
 import { myObject, myString } from '../../src/helpers/myData';
 
 describe('Observer', () => {
