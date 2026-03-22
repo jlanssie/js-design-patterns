@@ -6,6 +6,7 @@ import {
   myObject,
   myString,
 } from '../../src/helpers/myData';
+import { Iterator } from '../../src/behavioral-patterns/iterator/Iterator.class';
 
 describe('Iterator', () => {
   test('An iterator', () => {
@@ -40,5 +41,11 @@ describe('Iterator', () => {
     }
 
     expect(secondResult).toBe(3);
+  });
+
+  test('An iterator constructor', () => {
+    const iterator = new Iterator();
+    expect(iterator).toBeInstanceOf(Iterator);
+    expect(iterator.hasNext()).toBe(false);
   });
 });

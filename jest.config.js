@@ -1,7 +1,8 @@
 export default {
   collectCoverage: true,
-  collectCoverageFrom: ['src/**/*.{js,ts}'],
+  collectCoverageFrom: ['src/**/*.{js,ts}', '!src/**/*.interface.ts'],
   coveragePathIgnorePatterns: ['<rootDir>/dist/', '<rootDir>/node_modules/'],
+  coverageProvider: 'v8',
   coverageThreshold: {
     global: {
       branches: 100,

@@ -1,14 +1,15 @@
 import { IElement } from './IElement.interface';
 import { myNumber } from '../../helpers/myData';
+import { IVisitor } from './IVisitor.interface';
 
 export class ElementOne implements IElement {
-  private readonly value: number = myNumber;
+  readonly value: number = myNumber;
 
   getValue(): number {
     return this.value;
   }
 
-  accept(visitor: any): any {
+  accept(visitor: IVisitor): any {
     return visitor.visit(this);
   }
 }

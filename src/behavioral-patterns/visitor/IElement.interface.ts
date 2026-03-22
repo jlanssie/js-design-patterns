@@ -1,3 +1,6 @@
+import { IVisitor } from './IVisitor.interface';
+
 export interface IElement {
-  accept(visitor: any): any;
+  getValue(): any;
+  accept(visitor: IVisitor): any;
 }
