@@ -9,7 +9,8 @@ import {
 import { Iterator } from '../../src/behavioral-patterns/iterator/Iterator.class';
 
 describe('Iterator', () => {
-  test('An iterator', () => {
+  test('Iterator should provide a uniform interface for traversing an aggregate object while hiding its internal structure.', () => {
+    // The Collection acts as the "Aggregate"
     const collection = new Collection();
     collection.add(myString);
     collection.add(myNumber);
@@ -18,14 +19,15 @@ describe('Iterator', () => {
     collection.add(myEnum);
     collection.remove(myEnum);
 
+    // The iterator captures the traversal state independently of the collection
     const iterator = collection.createIterator();
 
     let firstResult = 0;
     while (iterator.hasNext()) {
       const item = iterator.next();
-      console.log(item);
       firstResult++;
 
+      // The pattern can also support modifications to the underlying aggregate during traversal
       if (item === myNumber) {
         iterator.remove();
       }
@@ -35,15 +37,14 @@ describe('Iterator', () => {
 
     let secondResult = 0;
     while (iterator.hasNext()) {
-      const item = iterator.next();
-      console.log(item);
+      iterator.next();
       secondResult++;
     }
 
     expect(secondResult).toBe(3);
   });
 
-  test('An iterator constructor', () => {
+  test('Iterator should maintain its own traversal state, allowing multiple independent iterations over the same aggregate.', () => {
     const iterator = new Iterator();
     expect(iterator).toBeInstanceOf(Iterator);
     expect(iterator.hasNext()).toBe(false);

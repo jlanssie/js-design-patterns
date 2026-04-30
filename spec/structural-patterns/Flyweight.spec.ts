@@ -3,8 +3,11 @@ import { myEnum, myObject } from '../../src/helpers/myData';
 import { thirdPartyObject } from '../../src/helpers/thirdPartyData';
 
 describe('Flyweight', () => {
-  test('A Flyweight should reuse the same instance when requested multiple times', () => {
+  test('Flyweight should facilitate the sharing of intrinsic state to support a large number of objects efficiently without redundant memory allocation.', () => {
+    // The FlyweightFactory manages the pool of shared objects
     const flyweightFactory = new FlyweightFactory();
+
+    // Requesting the same type multiple times returns the same shared instance
     const firstMyClassObject = flyweightFactory.getObject(myEnum.MyClass);
     const secondMyClassObject = flyweightFactory.getObject(myEnum.MyClass);
     const thirdMyClassObject = flyweightFactory.getObject(myEnum.MyClass);
@@ -12,27 +15,20 @@ describe('Flyweight', () => {
       myEnum.ThirdPartyClass,
     );
 
-    expect(firstMyClassObject).not.toBeNull();
-    expect(secondMyClassObject).not.toBeNull();
-    expect(thirdMyClassObject).not.toBeNull();
-    expect(thirdPartyClassObject).not.toBeNull();
+    // Assert that the objects are not null and verify identity through sharing
+    expect(firstMyClassObject).toBe(secondMyClassObject);
+    expect(secondMyClassObject).toBe(thirdMyClassObject);
 
-    // @ts-expect-error TS18048: firstMyClassObject is possibly undefined
-    expect(firstMyClassObject.method()).toBe(myObject);
-
-    // @ts-expect-error TS18048: firstMyClassObject is possibly undefined
-    expect(secondMyClassObject.method()).toBe(myObject);
-
-    // @ts-expect-error TS18048: firstMyClassObject is possibly undefined
-    expect(thirdMyClassObject.method()).toBe(myObject);
-
-    // @ts-expect-error TS18048: firstMyClassObject is possibly undefined
-    expect(thirdPartyClassObject.method()).toBe(thirdPartyObject);
+    // The shared objects maintain their specialized behavior (Intrinsic State)
+    expect(firstMyClassObject?.method()).toBe(myObject);
+    expect(thirdPartyClassObject?.method()).toBe(thirdPartyObject);
   });
 
-  test('A Flyweight of an unsupported type should throw an error', () => {
+  test('Flyweight Factory should act as a gatekeeper, ensuring that only valid, supported types are instantiated and shared.', () => {
     const flyweightFactory = new FlyweightFactory();
 
+    // The factory prevents the creation of incompatible objects,
+    // maintaining the integrity of the shared object pool.
     expect(() => flyweightFactory.getObject('faulty type')).toThrow(
       'Invalid type.',
     );

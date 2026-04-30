@@ -4,12 +4,17 @@ import { Command } from '../../src/behavioral-patterns/command/Command.class';
 import { myObject } from '../../src/helpers/myData';
 
 describe('Command', () => {
-  test('An invoker invokes a command, which is executed by a receiver.', () => {
+  test('Command should encapsulate a request as an object, decoupling the object that invokes the operation from the one that knows how to perform it.', () => {
+    // The Invoker (sender) knows only how to trigger a command
     const invoker = new Invoker();
 
+    // The Receiver knows how to perform the actual work
     const receiver = new Receiver();
+
+    // The Command object binds the Receiver to a specific action
     const command = new Command(receiver);
 
+    // The Invoker executes the request without knowing anything about the Receiver's interface
     expect(invoker.execute(command)).toBe(myObject);
   });
 });

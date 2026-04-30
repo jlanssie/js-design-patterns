@@ -3,10 +3,12 @@ import { ArithmeticOperator } from '../../src/behavioral-patterns/interpreter/Ar
 import { NumberExpression } from '../../src/behavioral-patterns/interpreter/NumberExpression.class';
 
 describe('Interpreter', () => {
-  test('An Interpreter can interpret a simple language, that consists of simple expressions', () => {
+  test('Interpreter should define a representational grammar for a language and use an interpret operation to evaluate expressions within that grammar.', () => {
+    // Terminal Expressions (NumberExpression) represent the basic symbols of the grammar
     const leftNumber = new NumberExpression(1);
     const rightNumber = new NumberExpression(11);
 
+    // Non-terminal Expressions (ArithmeticExpression) implement the grammar rules for combining symbols
     const addition = new ArithmeticExpression(
       leftNumber,
       ArithmeticOperator.ADDITION,
@@ -35,6 +37,7 @@ describe('Interpreter', () => {
     );
     expect(division.interpret()).toBe(1 / 11);
 
+    // The pattern allows for building complex Abstract Syntax Trees (ASTs) by nesting expressions
     const math = new ArithmeticExpression(
       new ArithmeticExpression(
         addition,

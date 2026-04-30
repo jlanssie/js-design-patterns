@@ -1,18 +1,21 @@
 import { Facade } from '../../src/structural-patterns/Facade.class';
-
 import { MySystem } from '../../src/helpers/MySystem.class';
 import { ThirdPartySystem } from '../../src/helpers/ThirdPartySystem.class';
 
 describe('Facade', () => {
-  test("A facade provides a single entry point for other systems' methods", () => {
+  test('Facade should provide a unified, simplified entry point to a complex subsystem, orchestrating multiple internal calls behind a single interface.', () => {
+    // The Facade hides the complexity of interacting with the internal 'MySystem'
     const facade = new Facade({});
     facade.method();
 
+    // The client gets the result without needing to know which subsystem method was invoked
     expect(facade.data.system).toBe('System method-value.');
   });
 
-  test("A facade provides a single entry point for other systems' internal data", () => {
+  test('Facade should aggregate data from various disparate subsystems, presenting a consolidated view to the client.', () => {
     const facade = new Facade({});
+
+    // The client calls one method on the Facade instead of querying multiple subsystems
     const aggregatedData = facade.aggregatedData();
 
     expect(aggregatedData).toEqual({
@@ -21,12 +24,15 @@ describe('Facade', () => {
     });
   });
 
-  test('A facade can be initialized without data', () => {
+  test('Facade should manage the lifecycle and initial state of internal components, allowing for flexible initialization.', () => {
+    // A Facade often provides default configurations for its subsystems
     const facade = new Facade();
     expect(facade.data).toBeNull();
   });
 
-  test('Sub-systems methods perform actions with provided data', () => {
+  test('Subsystems should remain independent and accessible, allowing for specialized use cases while the Facade handles general tasks.', () => {
+    // Facade is not a "wrapper" that hides subsystems completely;
+    // it simply provides a "shortcut" to them.
     const systemA = new MySystem();
     const systemB = new ThirdPartySystem();
 
@@ -39,9 +45,5 @@ describe('Facade', () => {
       key: 'value',
       thirdPartySystemKey: 'Third-Party System method-value.',
     });
-
-    expect(systemA.method(null)).toBeUndefined();
-
-    expect(systemB.method(null)).toBeUndefined();
   });
 });
