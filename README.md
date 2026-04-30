@@ -1,4 +1,4 @@
-# JS Design Patterns (Work in progress)
+# JS Design Patterns
 
 JS Design Patterns is a library with classic Gang of Four (GoF) design patterns in modern JavaScript & TypeScript.
 
