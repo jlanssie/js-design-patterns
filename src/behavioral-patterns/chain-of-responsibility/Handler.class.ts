@@ -3,16 +3,27 @@ import { IHandler } from './IHandler.interface';
 /**
  * Class representing a handler implementation in a Chain of Responsibility pattern.
  */
-export class Handler implements IHandler {
+export abstract class Handler implements IHandler {
   nextHandler: IHandler | null = null;
 
-  // @ts-expect-error TS6133: request is declared but its value is never read.
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  protected abstract handle(request: any): any | null;
+
   process(request: any): any {
+    const response = this.handle(request);
+
+    if (response !== null) {
+      return response;
+    }
+
+    if (this.nextHandler) {
+      return this.nextHandler.process(request);
+    }
+
     throw new Error('Could not process request');
   }
 
-  setNextHandler(handler: IHandler): any {
+  setNextHandler(handler: IHandler): IHandler {
     this.nextHandler = handler;
+    return handler;
   }
 }

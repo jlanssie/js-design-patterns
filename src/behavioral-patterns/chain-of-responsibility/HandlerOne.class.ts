@@ -8,14 +8,11 @@ export class HandlerOne extends Handler {
     super();
   }
 
-  process(request: any): any {
+  handle(request: any): any {
     if (request === '1') {
       return `Handled by ${this.constructor.name}`;
     } else {
-      if (this.nextHandler) {
-        return this.nextHandler.process(request);
-      }
-      return super.process(request);
+      return null;
     }
   }
 }
