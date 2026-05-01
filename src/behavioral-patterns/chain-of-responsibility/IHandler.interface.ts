@@ -1,8 +1,10 @@
+import { HandlerMessageDTO } from './HandlerMessage.class';
+
 /**
  * Interface for a handler in a Chain of Responsibility pattern.
  */
 export interface IHandler {
-  process(request: any): any;
+  handle(request: HandlerMessageDTO): HandlerMessageDTO;
 
-  setNextHandler(handler: IHandler): any;
+  setNextHandler(handler: IHandler): IHandler;
 }

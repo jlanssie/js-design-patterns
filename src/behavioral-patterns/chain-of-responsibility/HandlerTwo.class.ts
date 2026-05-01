@@ -1,4 +1,5 @@
 import { Handler } from './Handler.class';
+import { MyClass } from '../../helpers/MyClass.class';
 
 /**
  * Class representing a concrete handler in a Chain of Responsibility pattern.
@@ -8,11 +9,8 @@ export class HandlerTwo extends Handler {
     super();
   }
 
-  handle(request: any): any {
-    if (request === '2') {
-      return `Handled by ${this.constructor.name}`;
-    } else {
-      return null;
-    }
+  process(input: MyClass): MyClass {
+    input.data = `Handled by ${this.constructor.name}`;
+    return input;
   }
 }

@@ -1,4 +1,7 @@
 import { IHandler } from './IHandler.interface';
+import { MyClass } from '../../helpers/MyClass.class';
+import { HandlerMessageDTO } from './HandlerMessage.class';
+import { IHandlerSignature } from './IHandlerSignature.interface';
 
 /**
  * Class representing a handler implementation in a Chain of Responsibility pattern.
@@ -6,20 +9,26 @@ import { IHandler } from './IHandler.interface';
 export abstract class Handler implements IHandler {
   nextHandler: IHandler | null = null;
 
-  protected abstract handle(request: any): any | null;
+  protected abstract process(request: MyClass): MyClass;
 
-  process(request: any): any {
-    const response = this.handle(request);
+  handle(request: HandlerMessageDTO): HandlerMessageDTO {
+    const currentHandlerResult = this.process(request.payload);
 
-    if (response !== null) {
-      return response;
-    }
+    const currentHandlerSignature: IHandlerSignature = {
+      name: this.constructor.name,
+      timestamp: new Date(),
+    };
+
+    const updatedHandlerMessage: HandlerMessageDTO = {
+      payload: currentHandlerResult,
+      metadata: [...request.metadata, currentHandlerSignature],
+    };
 
     if (this.nextHandler) {
-      return this.nextHandler.process(request);
+      return this.nextHandler.handle(updatedHandlerMessage);
     }
 
-    throw new Error('Could not process request');
+    return updatedHandlerMessage;
   }
 
   setNextHandler(handler: IHandler): IHandler {
