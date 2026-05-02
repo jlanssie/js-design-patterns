@@ -20,7 +20,6 @@ describe('Chain of Responsibility', () => {
     const handlerOne = new HandlerOne();
     const handlerTwo = new HandlerTwo();
 
-    // Reconfiguring the chain structure at runtime
     handlerTwo.setNextHandler(handlerOne);
 
     const handlerMessage = new HandlerMessageDTO();
