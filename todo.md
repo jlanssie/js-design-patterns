@@ -1,4 +1,5 @@
 # Todo
 
-- Check for both an OO-implementation and a procedural implementation of each pattern
+- Check for both an OO-implementation and a procedural implementation of each
+  pattern
 - Improve spec with Gherkin and Cucumber
